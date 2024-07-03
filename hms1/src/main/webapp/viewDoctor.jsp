@@ -72,8 +72,22 @@
        	conn = commonConnection.getConnection();
         // Create a statement and execute a query
         stmt = conn.createStatement();
+        String usertype = (String)session.getAttribute("usertype");
         String username = (String)session.getAttribute("username");
-        String sqlQuery = "SELECT * from doctor;";
+        String sqlQuery = null;
+        if(usertype.equals("doctor")) {
+        	sqlQuery = "SELECT * from doctor where specialization = (select specialization from doctor where username = '"+username+"');";
+		}else if(usertype.equals("patient")){
+			sqlQuery = "SELECT * from doctor where specialization = (select disease from patient where username = '"+username+"');";
+		}else if(usertype.equals("receptionist")) {
+			sqlQuery = "SELECT * from doctor;";
+		}else if(usertype.equals("admin")) {
+			sqlQuery = "SELECT * from doctor;";
+		}else {
+			sqlQuery = null;
+		}
+        
+        /* String sqlQuery = "SELECT * from doctor;"; */
         rs = stmt.executeQuery(sqlQuery);
         while(rs.next()){
     %>

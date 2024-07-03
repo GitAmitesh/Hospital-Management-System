@@ -124,7 +124,7 @@
         <ul class="navbar-list">
 
           <li class="nav-item dropdown">
-          <a style="font-size:1.8rem; color:white; font-weight:bold;" class="nav-link" href="#" id="navbarDropdownMenuLink">
+          <a style="font-size:1.8rem; color:white; font-weight:bold;" class="nav-link" href="index.html" id="navbarDropdownMenuLink">
             Home
           </a></li>
 
@@ -133,7 +133,7 @@
             Doctor
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">View doctors</a></li>
+            <li><a class="dropdown-item" href="viewDoctor.jsp" target="_blank">View doctors</a></li>
           </ul>
         </li>
           <li class="nav-item dropdown">
@@ -141,7 +141,7 @@
             Patient
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">View patients</a></li>
+            <li><a class="dropdown-item" href="viewPatient.jsp" target="_blank">View patients</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -149,7 +149,7 @@
             Receptionists
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">View receptionists</a></li>
+            <li><a class="dropdown-item" href="viewReceptionist.jsp" target="_blank">View receptionists</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -157,12 +157,12 @@
             Appointments
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">View appointments</a></li>
+            <li><a class="dropdown-item" href="#" target="_blank">View appointments</a></li>
           </ul>
         </li>
         
         <li class="nav-item dropdown">
-          <a style="font-size:1.8rem; color:white; font-weight:bold;" class="nav-link" href="#" id="navbarDropdownMenuLink">
+          <a style="font-size:1.8rem; color:white; font-weight:bold;" class="nav-link" href="changePassword.jsp" id="navbarDropdownMenuLink" target="_blank">
             Change Password
           </a></li>
 		

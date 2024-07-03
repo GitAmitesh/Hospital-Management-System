@@ -23,16 +23,14 @@ public class loginServlet extends HttpServlet {
 	Connection con=commonConnection.getConnection();
 	private String validate(String uname,String pass) {
 		try {
-//			System.out.println(con);
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("select username,password from users;");
-			while(rs.next()) {
-//				System.out.println(rs.getString(1)+","+rs.getString(2));
-				if(rs.getString(1).equals(uname) && rs.getString(2).equals(pass)) {
-//					System.out.println("true");
-					return rs.getString(1);
-				}
+			ResultSet rs = stmt.executeQuery("select username,password from users where username='"+uname+"' and password='"+pass+"';");
+
+			if(rs.next()==true) {
+//				System.out.println(rs);
+				return rs.getString(1);
 			}
+		
 		}
 		catch(Exception e) {
 			e.printStackTrace();
@@ -55,6 +53,7 @@ public class loginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 	}
 
 	/**
@@ -76,7 +75,7 @@ public class loginServlet extends HttpServlet {
 			ResultSet rs1= stmt.executeQuery(query);
 			rs1.next();
 			String usertype=rs1.getString(1);
-//			System .out.println("is"+usertype);
+			session.setAttribute("usertype", usertype);
 			if(usertype.equals("doctor")) {
 				response.sendRedirect("dashboardDoctor.jsp");
 			}else if(usertype.equals("patient")){
@@ -87,7 +86,7 @@ public class loginServlet extends HttpServlet {
 				session.setAttribute("name", "admin");
 				response.sendRedirect("dashboardAdmin.jsp");
 			}else {
-				response.sendRedirect("dashboardPatient.jsp");
+				response.sendRedirect("index.html");
 			}
 		}else {
 			response.sendRedirect("login.jsp?error=true");

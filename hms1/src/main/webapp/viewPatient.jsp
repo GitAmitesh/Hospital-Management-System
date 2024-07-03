@@ -79,7 +79,20 @@
         // Create a statement and execute a query
         stmt = conn.createStatement();
         String username = (String)session.getAttribute("username");
-        String sqlQuery = "SELECT * from patient;";
+        String usertype = (String)session.getAttribute("usertype");
+        String sqlQuery = null;
+        if(usertype.equals("doctor")) {
+        	sqlQuery = "SELECT * from patient where disease = (select specialization from doctor where username = '"+username+"');";
+		}else if(usertype.equals("patient")){
+			sqlQuery = "SELECT * from patient where username = '"+username+"';";
+		}else if(usertype.equals("receptionist")) {
+			sqlQuery = "SELECT * from patient;";
+		}else if(usertype.equals("admin")) {
+			sqlQuery = "SELECT * from patient;";
+		}else {
+			sqlQuery = null;
+		}
+
         rs = stmt.executeQuery(sqlQuery);
         while(rs.next()){
     %>

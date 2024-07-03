@@ -1,87 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <!DOCTYPE html>
 <html>
 <head>
   <title>Doctor Registration</title>
-  <style>
-     body {
-      font-family: Arial, sans-serif;
-      background-image: url('path_to_your_image.jpg'); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
-      background-size: cover; /* Ensures the image covers the entire background */
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      width: 50%;
-      margin: 50px auto;
-      background-color: rgba(255, 255, 255, 0.8); /* Optional: Adds a semi-transparent white background to the form */
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      text-align: center;
-    }
-
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    input[type="date"],
-    input[type="number"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    select {
-      padding: 10px 5px;
-    }
-
-    .gender{
-        display: flex;
-        margin-bottom: 15px;
-        justify-content:space-evenly;
-    }
-
-    button {
-      background-color: black;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      margin: 20px 0 20px 250px;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    p{
-        margin: 0;
-        padding: 0;
-        margin-bottom: 10px;
-    }
-  </style>
+	<link rel="stylesheet" href="./assets/css/registerStyle.css">
+	
   <script>
  var allClear=1;
     //event listener for the whole document is added
@@ -196,67 +119,73 @@ document.addEventListener('DOMContentLoaded', function () {
 </head>
 <body>
 
-<div class="container">
-  <h2>Doctor Registration</h2>
-  <form id="registerDoctor" action="./registerServlet" method="post">
+    <div class="wrapper">
   
-  	<input type="hidden" name="userType" value="doctor">
-  	
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-    
-    <p id="errorUser" style="font-size: 14px; color: red;"></p>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="phone">Phone Number:</label>
-    <input type="number" id="phone" name="phone" required>
-
-    <p id="errorPhone" style="font-size: 14px; color: red;"></p>
-
-    <label for="address">Address:</label>
-    <textarea id="address" name="address" required></textarea>
-
-    <label for="dob">Date of Birth:</label>
-    <input type="date" id="dob" name="dob" required>
-    
-    <label for="gender">Gender:</label>
-    <div class="gender">
-    <label><input type="radio" name="gender" value="male" required>Male</label>
-    <label><input type="radio" name="gender" value="female" required>Female</label>
-    </div>
+        <form id="registerDoctor" action="./registerServlet" method="post">
+         <h2>Doctor Registration</h2>
         
-    <label for="bloodGroup">Blood Group:</label>
-        <select id="bloodGroup" name="bloodGroup" required>
-            <option value="A+">A+</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B-">B-</option>
-            <option value="O+">O+</option>
-            <option value="O-">O-</option>
-            <option value="AB+">AB+</option>
-            <option value="AB-">AB-</option>
-        </select>
+         <input type="hidden" name="userType" value="doctor">
+        
+          <div class="input-field">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+          </div>
+          <div class="input-field">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+          </div>
+          <p id="errorUser" style="font-size: 14px; color: red;"></p>
+          <div class="input-field">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
+          <div class="input-field">
+            <input type="number" id="phone" name="phone" placeholder="Phone" required>
 
-    <label for="specialisation">Specialisation:</label>
-    <input type="text" id="specialisation" name="specialisation" required>
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-    
-    <label for="confirmPassword">Confirm Password:</label>
-    <input type="password" id="confirmPassword" name="confirmPassword" required>
-
-    <p id="errorPass" style="font-size: 15px; color: red;"></p>
-    
-    <button type="button" style="font-weight: bold;" onclick="formatAndSubmit()">Submit</button>
-  </form>
-</div>
-
-
-</body>
+          </div>
+          <p id="errorPhone" style="font-size: 14px; color: red;"></p>
+          <div class="input-field">
+            <input type="text" id="address" name="address" placeholder="Address" required>
+          </div>
+          <div class="input-field">
+              <input type="date" placeholder="Date Of Birth" style="color: white;"  id="dob" name="dob" required>
+          </div>
+          
+          <label for="gender">Gender:</label>
+          <div class="gender">
+          <label><input type="radio" name="gender" value="male" required>Male</label>
+          <label><input type="radio" name="gender" value="female" required>Female</label>
+          </div>
+              
+          <label for="bloodGroup">Blood Group:</label>
+      <div class="input-field">
+          <select id="bloodGroup" name="bloodGroup" required>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+          </select>
+      </div>
+      
+      
+              <div class="input-field">
+                  <input type="text" placeholder="Specilization" id="specialisation" name="specialisation" required>
+              </div>
+      
+              <div class="input-field">
+                  <input type="password" id="password" name="password" placeholder="Password" required>
+                  
+              </div>
+              <div class="input-field">
+                  <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                  
+              </div>
+      
+          <p id="errorPass" style="font-size: 15px; color: red;"></p>
+          
+          <button type="button" style="font-weight: bold; display: block; margin: auto;" onclick="formatAndSubmit()">Submit</button>
+        </form>
+      </div>
+    </body>
 </html>

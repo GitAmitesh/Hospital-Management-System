@@ -4,64 +4,31 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="./assets/css/stylelogin.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <title>Login</title>
-<style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        .login-container {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-        }
-
-        .login-container label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .login-container input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-        }
-
-        .login-container button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
-	<div class="login-container">
-        <h2>Login</h2>
+	<div class="wrapper">
+        
         <form action="./loginServlet" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Login</button>
-            <% String errorParam = request.getParameter("error");
-            		if (errorParam!=null && errorParam.equals("true")){%>
-            		<p style="color:red;">Invalid username or password. Try Again.</p><%}%>
+       
+        <h1>Login</h1>
+            <div class="input-box" >
+                <input type="text" placeholder="Username" id="username" name="username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box" >
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            
+            <button type="submit" class="btn">Login</button>
+            
+            <% String errorParam = (String)request.getParameter("error");
+            if (errorParam!=null && errorParam.equals("true")){%>
+            <p style="color:red;"><br>Invalid username or password. Try Again.</p><%}%>
+           
         </form>
     </div>
 </body>

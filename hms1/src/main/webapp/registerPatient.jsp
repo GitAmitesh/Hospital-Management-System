@@ -1,88 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="./assets/css/registerStyle.css">
 <head>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <title>Patient Registration</title>
-  <style>
-     body {
-      font-family: Arial, sans-serif;
-      background-image: url('path_to_your_image.jpg'); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
-      background-size: cover; /* Ensures the image covers the entire background */
-      margin: 0;
-      padding: 0;
-    }
 
-    .container {
-      width: 50%;
-      margin: 50px auto;
-      background-color: rgba(255, 255, 255, 0.8); /* Optional: Adds a semi-transparent white background to the form */
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      text-align: center;
-    }
-
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    input[type="date"],
-    input[type="number"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    select {
-      padding: 10px 5px;
-    }
-
-    .gender{
-        display: flex;
-        margin-bottom: 15px;
-        justify-content:space-evenly;
-    }
-
-    button {
-      background-color: black;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      margin: 20px 0 20px 250px;
-    }
-
-    button:hover {
-      background-color: #45a049;
-      border-color: #45a049;
-    }
-
-    p{
-        margin: 0;
-        padding: 0;
-        margin-bottom: 10px;
-    }
-  </style>
   <script>
  var allClear=1;
     //event listener for the whole document is added
@@ -197,42 +120,50 @@ document.addEventListener('DOMContentLoaded', function () {
 </head>
 <body>
 
-<div class="container">
-  <h2>Patient Registration</h2>
+<div class="wrapper">
+  
   <form id="registerDoctor" action="./registerServlet" method="post">
+   <h2>Patient Registration</h2>
   
   	<input type="hidden" name="userType" value="patient">
   
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-    
+    <div class="input-field">
+        <input type="text"placeholder="Name" id="name" name="name" required>  
+    </div>
+    <div class="input-field">
+        <input type="text"placeholder="UserName" id="username" name="username" required>
+    </div>
     <p id="errorUser" style="font-size: 14px; color: red;"></p>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="phone">Phone Number:</label>
-    <input type="number" id="phone" name="phone" required>
-
+    <div class="input-field">
+        <input type="email" placeholder="Email" id="email" name="email" required>
+       
+    </div>
+    <div class="input-field">
+        <input type="number" placeholder="Phone" id="phone" name="phone" required>
+        
+    </div>
     <p id="errorPhone" style="font-size: 14px; color: red;"></p>
     
-     <label for="fatherName">Father's Name:</label>
-    <input type="text" id="fatherName" name="fatherName" required>
+    <div class="input-field">
+        <input type="text" placeholder="Father's Name" id="fatherName" name="fatherName" required>
+    </div>
     
-     <label for="city">City:</label>
-    <input type="text" id="city" name="city" required>   
+    <div class="input-field">
+        <input type="text" placeholder="City" id="city" name="city" required>
+       
+    </div>  
 
-    <label for="address">Address:</label>
-    <textarea id="address" name="address" required></textarea>
-
-    <label for="dob">Date of Birth:</label>
-    <input type="date" id="dob" name="dob" required>
+    <div class="input-field">
+        <input type="text" placeholder="Address" id="address" name="address" required>
+        
+    </div>
+    <div class="input-field">
+        <input type="date" placeholder="Date Of Birth" style="color: white;" id="dob" name="dob" required>
+    </div>
     
-    <label for="age">Age:</label>
-    <input type="number" id="age" name="age" required>
+    <div class="input-field">
+        <input type="Number"placeholder="Age" style="color: white;" id="age" name="age" required>
+    </div>
     
     <label for="gender">Gender:</label>
     <div class="gender">
@@ -241,32 +172,37 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
         
     <label for="bloodGroup">Blood Group:</label>
-        <select id="bloodGroup" name="bloodGroup" required>
-            <option value="A+">A+</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B-">B-</option>
-            <option value="O+">O+</option>
-            <option value="O-">O-</option>
-            <option value="AB+">AB+</option>
-            <option value="AB-">AB-</option>
-        </select>
-
-    <label for="disease">Disease:</label>
-    <input type="text" id="disease" name="disease" required>
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-    
-    <label for="confirmPassword">Confirm Password:</label>
-    <input type="password" id="confirmPassword" name="confirmPassword" required>
-
-    <p id="errorPass" style="font-size: 15px; color: red;"></p>
-    
-    <button type="button" style="font-weight: bold;" onclick="formatAndSubmit()">Submit</button>
-  </form>
+<div class="input-field">
+    <select id="bloodGroup" name="bloodGroup" required>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+    </select>
 </div>
 
 
+        <div class="input-field">
+            <input type="text" placeholder="Disease" id="disease" name="disease" required>
+        </div>
+
+        <div class="input-field">
+            <input type="password" placeholder="Password" id="password" name="password" required>
+            
+        </div>
+        <div class="input-field">
+            <input type="password" placeholder="Confirm Password" id="confirmPassword" name="confirmPassword" required>
+            
+        </div>
+
+    <p id="errorPass" style="font-size: 15px; color: red;"></p>
+    
+    <button type="button" style="font-weight: bold; display: block; margin: auto;" onclick="formatAndSubmit()">Submit</button>
+  </form>
+</div>
 </body>
 </html>

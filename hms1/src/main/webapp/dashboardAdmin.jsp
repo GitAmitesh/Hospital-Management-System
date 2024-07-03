@@ -100,7 +100,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="viewDoctor.jsp" target="_blank">View doctors</a></li>
-            <li><a class="dropdown-item" href="registerDoctor.jsp">Add doctor</a></li>
+            <li><a class="dropdown-item" href="registerDoctor.jsp" target="_blank">Add doctor</a></li>
           </ul>
         </li>
           <li class="nav-item dropdown">
@@ -109,7 +109,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="viewPatient.jsp" target="_blank">View patients</a></li>
-            <li><a class="dropdown-item" href="registerPatient.jsp">Add patient</a></li>
+            <li><a class="dropdown-item" href="registerPatient.jsp" target="_blank">Add patient</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -118,7 +118,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="viewReceptionist.jsp" target="_blank">View receptionists</a></li>
-            <li><a class="dropdown-item" href="registerReceptionist.jsp">Add receptionist</a></li>
+            <li><a class="dropdown-item" href="registerReceptionist.jsp" target="_blank">Add receptionist</a></li>
           </ul>
         </li>
         <!-- <li class="nav-item dropdown">
@@ -132,7 +132,7 @@
         </li>-->
         
         <li class="nav-item dropdown">
-          <a style="font-size:1.8rem; color:white; font-weight:bold;" class="nav-link" href="#" id="navbarDropdownMenuLink">
+          <a style="font-size:1.8rem; color:white; font-weight:bold;" class="nav-link" href="changePassword.jsp" id="navbarDropdownMenuLink" target="_blank">
             Change Password
           </a></li>
 		

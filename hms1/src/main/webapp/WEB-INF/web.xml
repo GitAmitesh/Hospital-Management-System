@@ -39,4 +39,33 @@
     <url-pattern>/registerServlet</url-pattern>
 </servlet-mapping>
 
+ <servlet>
+    <servlet-name>changePassServlet</servlet-name>
+    <servlet-class>changePassServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>changePassServlet</servlet-name>
+    <url-pattern>/changePassServlet</url-pattern>
+</servlet-mapping>
+
+ <servlet>
+    <servlet-name>addAppointment</servlet-name>
+    <servlet-class>addAppointment</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>addAppointment</servlet-name>
+    <url-pattern>/addAppointment</url-pattern>
+</servlet-mapping>
+
+ <servlet>
+    <servlet-name>checkAvailability</servlet-name>
+    <servlet-class>checkAvailability</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>checkAvailability</servlet-name>
+    <url-pattern>/checkAvailability</url-pattern>
+</servlet-mapping>
 </web-app>
