@@ -10,11 +10,16 @@ USER BASE: Admin, Doctor, Patient, Receptionist <br>
 - #### Patient: View available Doctors having expertise in patient's disease, Add/cancel Appointments, Change Password <br>
 - #### Receptionist: View Doctors, View/Add Patients, View/Add Appointmemts, Change Password <br>
 <br>
-### Any user can login using the common login page and they will land on their respective dashboards.<br>
-![Screenshot_20240703_222951](https://github.com/GitAmitesh/Hospital-Management-System/assets/145249059/c3cb81ad-dc4c-4c01-b9bc-d3240252ca6c)
-<br><br>
-#### Below is the overview of Admin panel/dashboard. Similarly other users such as doctors, patients and receptionists also have their respective dashboards.<br>
-![Screenshot_20240703_223013](https://github.com/GitAmitesh/Hospital-Management-System/assets/145249059/516ca4c5-9c00-43ec-9c39-a6a91f5c956c)
-<br><br>
-#### Multiple registration pages have been built for addition of new patients, doctors, etc. Only admin can register doctors and receptionists. Below is an example of patient registration form.<br>
-![Screenshot_20240703_222928](https://github.com/GitAmitesh/Hospital-Management-System/assets/145249059/be708ee7-6419-46d9-b1db-e54913facfb6)
+### Any user can login using the common login page and they will land on their respective dashboards.
+
+<br>![Screenshot_20240703_222951](https://github.com/GitAmitesh/Hospital-Management-System/assets/145249059/9c2c7993-fee4-4a40-a289-f54751b16830)
+
+<br>
+#### Below is the overview of Admin panel/dashboard. Similarly other users such as doctors, patients and receptionists also have their respective dashboards.
+
+<br>![Screenshot_20240703_223013](https://github.com/GitAmitesh/Hospital-Management-System/assets/145249059/516ca4c5-9c00-43ec-9c39-a6a91f5c956c)
+
+<br>
+#### Multiple registration pages have been built for addition of new patients, doctors, etc. Only admin can register doctors and receptionists. Below is an example of patient registration form.
+
+<br>![Screenshot_20240703_222928](https://github.com/GitAmitesh/Hospital-Management-System/assets/145249059/be708ee7-6419-46d9-b1db-e54913facfb6)
